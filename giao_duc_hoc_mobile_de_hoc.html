@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#176b9b">
+<title>Giáo dục học | Học dễ hiểu</title>
+<style>
+:root{--blue:#176b9b;--blue-dark:#104d72;--sky:#eaf5fc;--bg:#f5f8fb;--ink:#183246;--muted:#607789;--line:#dce7ef;--white:#fff;--green:#16764b;--red:#b13c45;--amber:#956315;--shadow:0 4px 18px rgba(23,67,95,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Segoe UI",sans-serif;font-size:17px;line-height:1.7;-webkit-text-size-adjust:100%}
+button,input,textarea{font:inherit}button{border:0;border-radius:13px;padding:12px 17px;background:var(--blue);color:white;font-weight:700;cursor:pointer;min-height:46px}button:active{transform:scale(.985)}button.light{background:var(--sky);color:var(--blue)}button.outline{background:white;color:var(--blue);border:1px solid var(--line)}button:disabled{opacity:.45}
+header{background:linear-gradient(135deg,#eaf6fd,#dceefa);padding:24px max(18px,calc((100vw - 940px)/2)) 22px;border-bottom:1px solid var(--line)}
+.brand{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--blue);text-transform:uppercase}h1{font-size:clamp(27px,5vw,38px);line-height:1.2;letter-spacing:-.03em;margin:7px 0}header p{margin:0;color:#4e6c80;max-width:720px;font-size:16px}
+main{max-width:940px;margin:auto;padding:20px 16px 100px}.screen{display:none}.screen.active{display:block}
+.welcome{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}.welcome h2{font-size:23px;margin:0 0 5px}.welcome p{margin:0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:12px;text-align:center}.stat strong{display:block;color:var(--blue);font-size:25px;line-height:1.2}.stat span{font-size:13px;color:var(--muted)}
+.progress{height:9px;background:#e6eef4;border-radius:20px;overflow:hidden;margin:12px 0}.progress i{display:block;height:100%;background:#2788b9;border-radius:20px}
+.section-title{font-size:23px;margin:22px 0 9px;letter-spacing:-.02em}.sub{color:var(--muted);font-size:15px;margin:0 0 14px}
+.path{display:grid;gap:12px}.pathcard{display:flex;gap:14px;align-items:flex-start;text-align:left;background:white;color:var(--ink);border:1px solid var(--line);padding:17px;border-radius:17px;box-shadow:var(--shadow);width:100%}.num{flex:0 0 38px;height:38px;border-radius:12px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-weight:800}.pathcard b{display:block;font-size:18px}.pathcard small{display:block;color:var(--muted);font-size:14px;font-weight:400;line-height:1.45;margin-top:3px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar button{font-size:14px;padding:9px 13px;min-height:40px}
+.box{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;margin:12px 0;box-shadow:var(--shadow)}.box h2{font-size:23px;line-height:1.35;margin:0 0 9px}.box h3{font-size:19px;margin:16px 0 6px}.muted{color:var(--muted)}.tag{display:inline-block;padding:3px 10px;border-radius:99px;background:var(--sky);color:var(--blue);font-size:12px;font-weight:800;margin-bottom:7px}
+.lesson-list{display:grid;gap:10px}.lesson{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}.lesson summary{list-style:none;padding:16px;cursor:pointer;font-weight:750;font-size:17px;display:flex;gap:12px;align-items:center}.lesson summary::-webkit-details-marker{display:none}.lesson summary:after{content:"＋";margin-left:auto;color:var(--blue);font-size:20px}.lesson[open] summary:after{content:"−"}.lesson-content{padding:0 16px 17px}.explain{background:#f0f7fb;border-left:4px solid #5ba1c7;padding:13px 14px;border-radius:9px;margin:12px 0}.remember{background:#fff8e9;border-left:4px solid #d5a044;padding:13px 14px;border-radius:9px;margin:12px 0}.remember b{color:#7c5615}.keyword{font-weight:800;color:#1c668e}
+.modegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.mode{background:white;color:var(--ink);border:1px solid var(--line);border-radius:16px;text-align:left;padding:16px;box-shadow:var(--shadow)}.mode .emoji{font-size:25px}.mode b{display:block;font-size:17px;margin:5px 0}.mode small{color:var(--muted);font-size:14px;line-height:1.4}
+.question{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--shadow);margin:13px 0}.qtop{display:flex;justify-content:space-between;color:var(--muted);font-size:14px;gap:10px}.qtext{font-size:20px;font-weight:750;line-height:1.45;margin:14px 0}.choice{display:flex;align-items:flex-start;gap:11px;padding:13px;border:1px solid var(--line);border-radius:13px;margin:9px 0;cursor:pointer;background:white}.choice input{width:19px;height:19px;accent-color:var(--blue);margin-top:4px;flex:0 0 auto}.choice:has(input:checked){border-color:#64a6ca;background:#f1f8fc}.feedback{padding:13px;border-radius:12px;margin-top:13px;font-size:15px}.good{background:#eaf7f0;color:#176b45}.bad{background:#fff0f0;color:#a3343b}
+.answer{display:none}.answer.show{display:block}.field{width:100%;border:1px solid #cbdbe6;border-radius:13px;padding:13px;background:white;color:var(--ink);font-size:17px}.field:focus{outline:3px solid #d7ebf7;border-color:#5b9ec4}.navrow{display:flex;gap:9px;flex-wrap:wrap;justify-content:space-between;margin-top:14px}.navrow button{flex:1}
+.flashcard{min-height:245px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#fff,#f1f8fc);border:1px solid var(--line);border-radius:20px;padding:25px;margin:14px 0}.flashcard .front{font-size:23px;font-weight:800;line-height:1.45}.flashcard .back{font-size:18px;margin-top:17px}
+textarea{min-height:130px;resize:vertical}
+.bottomnav{display:none}
+.note{font-size:14px;color:var(--muted)}
+@media(max-width:640px){
+ body{font-size:17px}header{padding:20px 17px}header p{font-size:15px}main{padding:14px 12px calc(100px + env(safe-area-inset-bottom))}
+ .stats{gap:7px}.stat{padding:10px 5px}.stat strong{font-size:22px}.stat span{font-size:12px}
+ .welcome,.box,.question{padding:16px;border-radius:16px}.welcome h2,.box h2{font-size:21px}.section-title{font-size:21px}
+ .modegrid{grid-template-columns:1fr}.mode{display:flex;align-items:center;gap:12px;padding:13px}.mode .emoji{font-size:27px}.mode b{margin:0}.mode small{display:block}
+ .pathcard{padding:14px}.pathcard b{font-size:17px}
+ .qtext{font-size:19px}.choice{padding:12px;font-size:16px}
+ .bottomnav{display:flex;position:fixed;z-index:10;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:7px 5px calc(7px + env(safe-area-inset-bottom));justify-content:space-around;backdrop-filter:blur(12px)}
+ .bottomnav button{background:transparent;color:#617789;padding:6px 4px;min-height:52px;flex:1;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:2px;border-radius:10px}
+ .bottomnav button span{font-size:20px;line-height:1.2}.bottomnav button.active{background:var(--sky);color:var(--blue)}
+ .toolbar button{flex:1}.navrow{position:sticky;bottom:72px;background:rgba(245,248,251,.95);padding:8px 0}
+}
+</style>
+</head>
+<body>
+<header><div class="brand">Bộ ôn tập Giáo dục học</div><h1>Học dễ hiểu, nhớ lâu hơn</h1><p>Học từng phần nhỏ · Tự kiểm tra · Biết ngay mình đang yếu ở đâu.</p></header>
+<main>
+<section id="home" class="screen active">
+ <div class="welcome"><span class="tag">LỘ TRÌNH ÔN TẬP</span><h2>Không cần học thuộc một lúc tất cả</h2><p>Chọn một chuyên đề, học từng ý ngắn, sau đó tự trả lời câu hỏi. Mỗi lần học chỉ cần tập trung một việc.</p>
+ <div class="stats"><div class="stat"><strong id="sLearned">0</strong><span>Thẻ đã nhớ</span></div><div class="stat"><strong id="sBest">0%</strong><span>Điểm cao nhất</span></div><div class="stat"><strong id="sDone">0</strong><span>Lượt luyện</span></div></div>
+ <div class="progress"><i id="progressBar" style="width:0%"></i></div><div class="note" id="progressText">Bắt đầu từ chuyên đề 1 nhé.</div></div>
+ <h2 class="section-title">Lộ trình học</h2><p class="sub">Đi theo thứ tự này sẽ dễ hiểu và dễ nhớ hơn.</p>
+ <div class="path">
+  <button class="pathcard" onclick="openLesson(0)"><span class="num">01</span><span><b>Các lực lượng giáo dục</b><small>Nhà trường – Gia đình – Xã hội · Vai trò và phối hợp</small></span></button>
+  <button class="pathcard" onclick="openLesson(1)"><span class="num">02</span><span><b>Bản chất và phương pháp giáo dục</b><small>Giáo dục là gì? Có đặc điểm gì? Dùng phương pháp nào?</small></span></button>
+  <button class="pathcard" onclick="openLesson(2)"><span class="num">03</span><span><b>Hoạt động trải nghiệm, hướng nghiệp</b><small>Mục tiêu – Nội dung – Hình thức – Quy trình</small></span></button>
+ </div>
+ <h2 class="section-title">Khi đã học xong, luyện tập tại đây</h2><div class="modegrid">
+  <button class="mode" onclick="go('cards')"><span class="emoji">🧠</span><span><b>Thẻ ghi nhớ</b><small>Che đáp án và tự nhớ lại</small></span></button>
+  <button class="mode" onclick="startQuiz()"><span class="emoji">✍️</span><span><b>Trắc nghiệm</b><small>Mỗi lần 10 câu, có giải thích</small></span></button>
+  <button class="mode" onclick="go('practice')"><span class="emoji">🎯</span><span><b>Luyện theo dạng</b><small>Điền khuyết, đúng/sai, tự luận</small></span></button>
+ </div>
+</section>
+<section id="learn" class="screen"><div class="toolbar"><button class="outline" onclick="go('home')">← Trang chủ</button></div><div id="lessonArea"></div></section>
+<section id="cardsScreen" class="screen"><div class="box"><span class="tag">GHI NHỚ CHỦ ĐỘNG</span><h2>Thẻ ghi nhớ</h2><p class="sub">Đọc câu hỏi, tự trả lời thành tiếng rồi mới bấm xem đáp án.</p><div class="qtop"><span id="cardCount"></span><span id="cardStatus">Chưa lật thẻ</span></div><div class="progress"><i id="cardProgress"></i></div><div class="flashcard"><div class="front" id="cardFront"></div><div class="back answer" id="cardBack"></div></div><div class="navrow"><button class="light" onclick="flip()">👀 Xem đáp án</button><button onclick="remember(true)">✓ Đã nhớ</button><button class="outline" onclick="remember(false)">↻ Chưa nhớ</button></div><div class="navrow"><button class="outline" onclick="cardMove(-1)">← Trước</button><button class="outline" onclick="cardMove(1)">Tiếp →</button></div></div></section>
+<section id="quizScreen" class="screen"><div class="toolbar"><button class="outline" onclick="go('home')">← Trang chủ</button></div><div class="box"><span class="tag">KIỂM TRA KIẾN THỨC</span><h2>Trắc nghiệm 10 câu</h2><p class="sub">Làm từng câu một. Chọn đáp án rồi bấm kiểm tra để biết vì sao đúng hoặc sai.</p><div id="quizArea"></div></div></section>
+<section id="practice" class="screen"><div class="box"><span class="tag">LUYỆN TẬP THEO DẠNG</span><h2>Chọn cách luyện phù hợp</h2><p class="sub">Mỗi dạng kiểm tra một kỹ năng khác nhau. Hãy làm lần lượt, không cần làm tất cả cùng lúc.</p><div class="modegrid">
+<button class="mode" onclick="startFill()"><span class="emoji">🔤</span><span><b>Điền từ còn thiếu</b><small>Nhớ chính xác thuật ngữ và từ khóa</small></span></button>
+<button class="mode" onclick="startTF()"><span class="emoji">☑️</span><span><b>Đúng hay sai?</b><small>Phân biệt nhận định đúng, sai</small></span></button>
+<button class="mode" onclick="go('essayScreen')"><span class="emoji">📝</span><span><b>Tự luận</b><small>Học cách triển khai ý và lấy ví dụ</small></span></button>
+</div></div><div id="practiceArea"></div></section>
+<section id="essayScreen" class="screen"><div class="toolbar"><button class="outline" onclick="go('practice')">← Các dạng luyện tập</button></div><div class="box"><span class="tag">LUYỆN TRÌNH BÀY</span><h2>Câu hỏi tự luận</h2><p class="sub">Tự viết dàn ý trước. Sau đó mở gợi ý để so sánh xem mình thiếu ý nào.</p><div id="essayArea"></div></div></section>
+</main>
+<nav class="bottomnav">
+<button class="active" data-go="home" onclick="go('home')"><span>⌂</span>Trang chủ</button>
+<button data-go="learn" onclick="go('learn')"><span>📖</span>Học bài</button>
+<button data-go="cardsScreen" onclick="go('cards')"><span>🧠</span>Thẻ nhớ</button>
+<button data-go="quizScreen" onclick="startQuiz()"><span>✍️</span>Kiểm tra</button>
+<button data-go="practice" onclick="go('practice')"><span>☰</span>Luyện tập</button>
+</nav>
+<script>
+const topics=[
+{title:"1. Tác động của các lực lượng giáo dục",tag:"Nhà trường – Gia đình – Xã hội",intro:"Nhân cách người học không hình thành từ một phía. Nhiều lực lượng cùng tác động, hỗ trợ hoặc đôi khi tạo ảnh hưởng khác nhau; vì vậy cần phối hợp thống nhất.",sections:[
+["Khái niệm và các lực lượng","Lực lượng giáo dục là những chủ thể, tổ chức và môi trường tham gia tác động đến quá trình hình thành, phát triển nhân cách người học.","Ba lực lượng cơ bản thường được nhấn mạnh là nhà trường, gia đình và xã hội."],
+["Nhà trường","Nhà trường giữ vai trò chủ đạo trong giáo dục có mục đích, có tổ chức và kế hoạch. Nhà trường xây dựng mục tiêu, nội dung, phương pháp; tổ chức dạy học và giáo dục; phối hợp với gia đình, xã hội; theo dõi và đánh giá sự tiến bộ của người học.","Từ khóa: CHỦ ĐẠO – CÓ KẾ HOẠCH – TỔ CHỨC."],
+["Gia đình","Gia đình là môi trường giáo dục đầu tiên, gần gũi và có ảnh hưởng lâu dài. Gia đình hình thành nề nếp, thói quen, tình cảm, cách ứng xử; chăm sóc và tạo điều kiện học tập; phối hợp với nhà trường.","Từ khóa: ĐẦU TIÊN – GẦN GŨI – LÂU DÀI."],
+["Xã hội","Xã hội tạo môi trường, điều kiện và cơ hội để người học tiếp xúc với đời sống thực tiễn. Các tổ chức, cộng đồng, đoàn thể, truyền thông và môi trường văn hóa có thể góp phần giáo dục hoặc tạo ảnh hưởng tiêu cực cần định hướng.","Từ khóa: MÔI TRƯỜNG – ĐIỀU KIỆN – CƠ HỘI THỰC TIỄN."],
+["Mối quan hệ giữa ba lực lượng","Ba lực lượng không hoạt động tách biệt. Tác động có thể bổ sung, hỗ trợ nhau; nếu thiếu thống nhất có thể gây mâu thuẫn trong nhận thức và hành vi của người học.","Ví dụ: nhà trường rèn tính trung thực, gia đình cần làm gương và xã hội cần tôn trọng sự trung thực."],
+["Nguyên tắc phối hợp","Thống nhất mục tiêu và định hướng giáo dục; trao đổi thông tin thường xuyên; phối hợp chặt chẽ nhưng tôn trọng chức năng của mỗi bên; phát huy vai trò chủ động của người học; kịp thời xử lý ảnh hưởng không phù hợp.","Công thức nhớ: THỐNG NHẤT – THƯỜNG XUYÊN – CHẶT CHẼ – ĐÚNG VAI TRÒ."],
+["Ý nghĩa và ví dụ vận dụng","Sự phối hợp tạo môi trường giáo dục đồng bộ, củng cố điều tốt, hạn chế tác động xấu và giúp người học vận dụng điều đã học vào đời sống.","Khi học sinh có biểu hiện đi học muộn: giáo viên tìm hiểu nguyên nhân, trao đổi phụ huynh, gia đình điều chỉnh nề nếp, đoàn thể hỗ trợ nếu cần; tránh chỉ phê bình một chiều."]
+]},
+{title:"2. Bản chất và phương pháp giáo dục",tag:"Mục đích – Tương tác – Hoạt động – Hành vi",intro:"Giáo dục không đơn thuần là nói cho người học biết điều đúng. Giáo dục phải tổ chức cho người học hiểu, tin, thực hành và dần biến điều đúng thành hành vi, thói quen.",sections:[
+["Bản chất quá trình giáo dục","Quá trình giáo dục là quá trình tổ chức các tác động có mục đích, có kế hoạch và có tổ chức của nhà giáo dục, nhằm hình thành và phát triển phẩm chất, nhân cách người học.","Cần nhớ: giáo dục hướng tới sự biến đổi bên trong và biểu hiện ra hành vi; không chỉ dừng ở việc truyền đạt thông tin."],
+["Đặc điểm của quá trình giáo dục","Có mục đích và định hướng; diễn ra thông qua sự tương tác giữa nhà giáo dục và người được giáo dục; gắn với hoạt động và giao tiếp; diễn ra lâu dài, liên tục; chịu ảnh hưởng của đặc điểm cá nhân và hoàn cảnh; đòi hỏi người học tự giác, tự giáo dục.","Mẹo nhớ 6 ý: MỤC ĐÍCH – TƯƠNG TÁC – HOẠT ĐỘNG – LÂU DÀI – CÁ BIỆT – TỰ GIÁO DỤC."],
+["Các con đường giáo dục","Tác động giáo dục cần thông qua hoạt động, giao tiếp và sự tự giáo dục của cá nhân. Người học hình thành kinh nghiệm khi tham gia việc thật, tương tác với người khác, suy ngẫm và tự điều chỉnh.","Ví dụ: muốn rèn tinh thần trách nhiệm, hãy giao nhiệm vụ cụ thể, cho người học thực hiện, phản hồi và tự đánh giá."],
+["Khái niệm phương pháp giáo dục","Phương pháp giáo dục là cách thức phối hợp hoạt động giữa nhà giáo dục và người được giáo dục nhằm thực hiện mục tiêu giáo dục.","Phương pháp trả lời câu hỏi: giáo dục bằng cách nào?"],
+["Nhóm phương pháp hình thành ý thức cá nhân","Giúp người học nhận thức đúng, hiểu chuẩn mực, hình thành quan điểm và thái độ. Ví dụ: giảng giải, đàm thoại, kể chuyện, nêu gương, tranh luận.","Từ khóa: NÓI – GIẢI THÍCH – THUYẾT PHỤC – NÊU GƯƠNG."],
+["Nhóm phương pháp tổ chức hoạt động và hình thành kinh nghiệm hành vi","Tạo cơ hội để người học thực hành, rèn luyện và hình thành hành vi, thói quen. Ví dụ: luyện tập, rèn luyện, giao việc, tổ chức hoạt động, tập thói quen.","Từ khóa: LÀM – LUYỆN – LẶP LẠI – THÀNH THÓI QUEN."],
+["Nhóm phương pháp kích thích và điều chỉnh hành vi","Tác động nhằm khuyến khích hành vi tích cực, điều chỉnh hành vi chưa phù hợp. Ví dụ: khen thưởng, trách phạt, thi đua.","Từ khóa: ĐỘNG VIÊN – NHẮC NHỞ – ĐIỀU CHỈNH."],
+["Lựa chọn và phối hợp phương pháp","Cần căn cứ mục tiêu, nội dung, lứa tuổi, đặc điểm cá nhân và hoàn cảnh; phát huy tính tích cực, tự giác; kết hợp linh hoạt nhiều phương pháp; tôn trọng người học và gắn với thực tiễn.","Không có một phương pháp duy nhất phù hợp mọi đối tượng và mọi tình huống."],
+["Phân biệt ba nhóm qua ví dụ","Giáo viên kể câu chuyện về lòng trung thực: hình thành ý thức. Học sinh thực hiện cam kết trung thực trong một dự án: tổ chức hoạt động. Giáo viên tuyên dương hành vi trung thực và góp ý khi vi phạm: kích thích, điều chỉnh.","Mẹo phân loại: NGHE/HIỂU = ý thức; TỰ LÀM = hoạt động; ĐƯỢC KHUYẾN KHÍCH/ĐIỀU CHỈNH = kích thích."]
+]},
+{title:"3. Hoạt động trải nghiệm, hướng nghiệp",tag:"Trải nghiệm – Vận dụng – Phát triển năng lực",intro:"Người học phát triển phẩm chất và năng lực bằng cách tham gia hoạt động thực tiễn, trải nghiệm, suy ngẫm, chia sẻ và vận dụng điều đã học.",sections:[
+["Khái niệm và mục tiêu","Hoạt động trải nghiệm, hướng nghiệp là hoạt động giáo dục được tổ chức để học sinh tiếp cận thực tiễn, huy động kinh nghiệm cá nhân, tham gia hoạt động và vận dụng kiến thức, kỹ năng vào đời sống; qua đó phát triển phẩm chất và năng lực.","Không đồng nhất trải nghiệm với vui chơi tự do: hoạt động cần mục tiêu, nhiệm vụ, tổ chức và đánh giá."],
+["Bốn mạch nội dung","Hướng vào bản thân; hướng đến xã hội; hướng đến tự nhiên; hướng nghiệp.","Mẹo nhớ: MÌNH – NGƯỜI – THIÊN NHIÊN – NGHỀ."],
+["Bốn loại hình tổ chức cơ bản","Sinh hoạt dưới cờ; sinh hoạt lớp; hoạt động giáo dục theo chủ đề; hoạt động câu lạc bộ.","Mẹo nhớ: CỜ – LỚP – CHỦ ĐỀ – CLB."],
+["Nội dung hướng vào bản thân","Nhận thức bản thân; rèn luyện nền nếp, kỹ năng; chăm sóc bản thân; quản lý cảm xúc, thời gian và phát triển điểm mạnh.","Câu hỏi tự kiểm: Tôi là ai? Tôi có điểm mạnh, điểm cần cải thiện nào?"],
+["Nội dung hướng đến xã hội","Xây dựng quan hệ với gia đình, thầy cô, bạn bè và cộng đồng; giao tiếp, hợp tác; tham gia hoạt động xã hội; thực hiện trách nhiệm và ứng xử phù hợp.","Tập trung vào quan hệ, trách nhiệm và đóng góp với cộng đồng."],
+["Nội dung hướng đến tự nhiên","Tìm hiểu môi trường tự nhiên; bảo vệ môi trường; ứng phó với biến đổi khí hậu và tham gia hoạt động vì thiên nhiên.","Gắn nhận thức môi trường với hành động cụ thể."],
+["Nội dung hướng nghiệp","Tìm hiểu bản thân; tìm hiểu nghề nghiệp và yêu cầu nghề; tìm hiểu thị trường lao động, cơ sở đào tạo; lựa chọn hướng học tập/nghề nghiệp và lập kế hoạch.","Mẹo nhớ 4 bước: HIỂU MÌNH – HIỂU NGHỀ – TÌM CƠ HỘI – LẬP KẾ HOẠCH."],
+["Vai trò của giáo viên và học sinh","Giáo viên định hướng, thiết kế, tổ chức, hướng dẫn, hỗ trợ và đánh giá. Học sinh là chủ thể tích cực: tham gia, hợp tác, giải quyết vấn đề, chia sẻ, phản hồi và tự đánh giá.","Giáo viên không làm thay; học sinh không chỉ ngồi nghe."],
+["Quy trình tổ chức hoạt động","Chuẩn bị/xác định mục tiêu; thiết kế hoạt động và nhiệm vụ; tổ chức thực hiện; chia sẻ, phản hồi; đánh giá và vận dụng.","Mẹo nhớ: CHUẨN BỊ – THIẾT KẾ – LÀM – CHIA SẺ – ĐÁNH GIÁ."],
+["Ví dụ một hoạt động trải nghiệm","Chủ đề: giảm rác thải nhựa trong trường. Học sinh khảo sát, thống kê, đề xuất giải pháp, truyền thông, thử nghiệm trong một tuần, báo cáo kết quả và tự đánh giá.","Ví dụ này có đủ trải nghiệm thực tế, hợp tác, giải quyết vấn đề và vận dụng."]
+]}];
+const cards=[
+["Kể tên ba lực lượng giáo dục chủ yếu.","Nhà trường – Gia đình – Xã hội."],
+["Nhà trường giữ vai trò gì?","Giữ vai trò chủ đạo trong giáo dục có mục đích, tổ chức và kế hoạch."],
+["Vì sao gia đình có ảnh hưởng lâu dài?","Vì là môi trường giáo dục đầu tiên, gần gũi, hình thành nề nếp và thói quen từ sớm."],
+["Xã hội tác động đến giáo dục bằng cách nào?","Tạo môi trường, điều kiện và cơ hội giáo dục thực tiễn."],
+["Nêu nguyên tắc phối hợp ba lực lượng.","Thống nhất mục tiêu, nội dung; phối hợp chặt chẽ, thường xuyên và đúng vai trò."],
+["Bản chất quá trình giáo dục là gì?","Tổ chức tác động có mục đích để hình thành và phát triển phẩm chất, nhân cách."],
+["Nêu các đặc điểm quan trọng của quá trình giáo dục.","Có mục đích; có tương tác; gắn hoạt động; lâu dài, liên tục; mang tính cá biệt; cần tự giáo dục."],
+["Giáo dục cần thông qua những con đường nào?","Hoạt động, giao tiếp và sự tự giáo dục của cá nhân."],
+["Phương pháp giáo dục là gì?","Cách thức phối hợp hoạt động giữa nhà giáo dục và người được giáo dục để thực hiện mục tiêu."],
+["Ba nhóm phương pháp giáo dục?","Hình thành ý thức; tổ chức hoạt động và hình thành kinh nghiệm hành vi; kích thích và điều chỉnh hành vi."],
+["Kể tên phương pháp hình thành ý thức.","Giảng giải, đàm thoại, kể chuyện, nêu gương, tranh luận."],
+["Kể tên phương pháp tổ chức hoạt động.","Luyện tập, rèn luyện, giao việc, tổ chức hoạt động, tập thói quen."],
+["Kể tên phương pháp kích thích, điều chỉnh.","Khen thưởng, trách phạt, thi đua."],
+["Vì sao cần kết hợp nhiều phương pháp?","Mỗi phương pháp có ưu điểm và giới hạn; phối hợp giúp tác động toàn diện, phù hợp người học và tình huống."],
+["HĐTN-HN hướng tới điều gì?","Phát triển phẩm chất, năng lực thông qua trải nghiệm và vận dụng vào thực tiễn."],
+["Bốn mạch nội dung HĐTN-HN?","Hướng vào bản thân; hướng đến xã hội; hướng đến tự nhiên; hướng nghiệp."],
+["Bốn loại hình tổ chức cơ bản?","Sinh hoạt dưới cờ; sinh hoạt lớp; hoạt động giáo dục theo chủ đề; hoạt động câu lạc bộ."],
+["Hướng nghiệp gồm những nội dung cốt lõi nào?","Hiểu bản thân; tìm hiểu nghề; tìm hiểu thị trường lao động/cơ sở đào tạo; lựa chọn và lập kế hoạch."],
+["Vai trò của giáo viên trong HĐTN-HN?","Định hướng, thiết kế, tổ chức, hướng dẫn, hỗ trợ và đánh giá."],
+["Quy trình tổ chức HĐTN-HN?","Chuẩn bị/xác định mục tiêu; thiết kế; thực hiện; chia sẻ/phản hồi; đánh giá/vận dụng."],
+["Muốn rèn trách nhiệm nên chỉ giảng giải hay giao việc?","Cần tổ chức cho người học thực hiện nhiệm vụ thật, sau đó phản hồi và tự đánh giá."],
+["Kể ví dụ về phối hợp gia đình – nhà trường.","Giáo viên trao đổi phụ huynh về nề nếp học tập; gia đình cùng thống nhất cách hỗ trợ và phản hồi tiến bộ."],
+["Điểm khác nhau giữa ý thức và hành vi?","Ý thức là nhận thức, thái độ, quan điểm; hành vi là biểu hiện qua việc làm cụ thể."],
+["Nêu một ví dụ phương pháp hình thành ý thức.","Kể chuyện, đàm thoại hoặc nêu gương để học sinh hiểu giá trị trung thực."],
+["Nêu một ví dụ phương pháp kích thích hành vi.","Khen ngợi, tuyên dương hành vi tích cực hoặc tổ chức thi đua phù hợp."],
+["Vì sao trải nghiệm phải có mục tiêu?","Để hoạt động có định hướng giáo dục, nhiệm vụ rõ ràng và có căn cứ đánh giá."],
+["Học sinh giữ vai trò gì trong HĐTN-HN?","Là chủ thể tích cực tham gia, hợp tác, giải quyết vấn đề, chia sẻ và tự đánh giá."],
+["Mạch hướng vào bản thân tập trung vào gì?","Nhận thức bản thân, chăm sóc và rèn luyện, quản lý cảm xúc/thời gian, phát triển điểm mạnh."],
+["Mạch hướng đến xã hội tập trung vào gì?","Quan hệ, giao tiếp, hợp tác, trách nhiệm và đóng góp với cộng đồng."],
+["Mạch hướng đến tự nhiên tập trung vào gì?","Hiểu, bảo vệ môi trường tự nhiên và tham gia hành động vì môi trường."],
+["Nêu ví dụ hoạt động hướng nghiệp.","Tìm hiểu sở thích/năng lực, phỏng vấn người làm nghề, tìm hiểu cơ sở đào tạo rồi lập kế hoạch."],
+["Vì sao cần đánh giá sau trải nghiệm?","Để nhận ra kết quả, khó khăn, điều học được và cách vận dụng/cải thiện tiếp theo."],
+["Phân biệt sinh hoạt lớp và hoạt động theo chủ đề.","Sinh hoạt lớp diễn ra trong khuôn khổ sinh hoạt tập thể lớp; hoạt động theo chủ đề được thiết kế quanh một chủ đề giáo dục cụ thể."],
+["Một hoạt động trải nghiệm có thể tích hợp nhiều mạch nội dung không?","Có. Một hoạt động thực tiễn có thể đồng thời phát triển bản thân, xã hội, tự nhiên hoặc hướng nghiệp."],
+["Tự giáo dục có nghĩa là gì?","Cá nhân tự nhận thức, đặt mục tiêu, tự rèn luyện, theo dõi và điều chỉnh hành vi của mình."],
+["Khi chọn phương pháp giáo dục cần căn cứ vào đâu?","Mục tiêu, nội dung, lứa tuổi, đặc điểm cá nhân, hoàn cảnh và điều kiện thực hiện."],
+["Tại sao không nên chỉ dùng trách phạt?","Trách phạt đơn độc dễ gây phản ứng tiêu cực; cần kết hợp giải thích, hỗ trợ, rèn luyện và khuyến khích."],
+["Nêu một ví dụ về tác động của xã hội.","Hoạt động tình nguyện, câu lạc bộ cộng đồng, truyền thông hoặc môi trường văn hóa địa phương."],
+["Nhà trường phối hợp với xã hội bằng cách nào?","Kết nối tổ chức, chuyên gia, cơ sở nghề nghiệp và cộng đồng để tạo môi trường học tập thực tiễn."],
+["Thế nào là phối hợp giáo dục thống nhất?","Các bên có mục tiêu và cách tác động tương thích, trao đổi thông tin và hỗ trợ nhau thay vì đưa thông điệp mâu thuẫn."],
+["Từ khóa nhớ vai trò ba lực lượng?","Nhà trường: chủ đạo; gia đình: đầu tiên, lâu dài; xã hội: môi trường và cơ hội."],
+["Từ khóa nhớ ba nhóm phương pháp?","HIỂU – LÀM – ĐIỀU CHỈNH."],
+["Từ khóa nhớ bốn mạch HĐTN-HN?","MÌNH – NGƯỜI – TỰ NHIÊN – NGHỀ."],
+["Từ khóa nhớ bốn loại hình tổ chức?","CỜ – LỚP – CHỦ ĐỀ – CÂU LẠC BỘ."],
+["Từ khóa nhớ quy trình hoạt động?","CHUẨN BỊ – THIẾT KẾ – THỰC HIỆN – CHIA SẺ – ĐÁNH GIÁ."]
+];
+const mcqs=[
+["Ba lực lượng giáo dục cơ bản là:",["Nhà trường, gia đình, xã hội","Nhà trường, doanh nghiệp, truyền thông","Gia đình, bạn bè, mạng xã hội","Giáo viên, học sinh, sách giáo khoa"],0,"Ba lực lượng thường được nhấn mạnh là nhà trường – gia đình – xã hội."],
+["Lực lượng giữ vai trò chủ đạo trong giáo dục có tổ chức, kế hoạch là:",["Gia đình","Nhà trường","Bạn bè","Truyền thông"],1,"Nhà trường giữ vai trò chủ đạo trong giáo dục có mục đích, tổ chức và kế hoạch."],
+["Gia đình được xem là:",["Môi trường giáo dục đầu tiên","Nơi chỉ chăm sóc thể chất","Lực lượng không ảnh hưởng đến nhân cách","Môi trường chỉ xuất hiện khi trẻ đi học"],0,"Gia đình là môi trường giáo dục đầu tiên và có ảnh hưởng lâu dài."],
+["Xã hội góp phần giáo dục bằng cách:",["Thay thế hoàn toàn nhà trường","Tạo môi trường và cơ hội thực tiễn","Chỉ đánh giá điểm số","Chỉ truyền đạt kiến thức"],1,"Xã hội tạo môi trường, điều kiện và cơ hội để người học trải nghiệm thực tiễn."],
+["Phối hợp ba lực lượng cần bảo đảm:",["Mỗi bên làm riêng","Chỉ nhà trường quyết định mọi việc","Thống nhất mục tiêu và trao đổi thường xuyên","Không cần thông tin cho gia đình"],2,"Phối hợp cần thống nhất, chặt chẽ, thường xuyên và đúng vai trò."],
+["Tình huống nào thể hiện phối hợp giáo dục?",["Giáo viên không trao đổi với phụ huynh","Nhà trường và gia đình thống nhất cách rèn nề nếp","Mỗi bên yêu cầu học sinh một kiểu","Chỉ xử lý khi có vi phạm nghiêm trọng"],1,"Các bên thống nhất cách hỗ trợ sẽ tạo tác động đồng bộ."],
+["Bản chất quá trình giáo dục hướng tới:",["Truyền đạt thật nhiều thông tin","Hình thành và phát triển nhân cách","Chỉ tạo thành tích thi cử","Chỉ kiểm tra hành vi"],1,"Giáo dục hướng tới sự hình thành, phát triển phẩm chất và nhân cách."],
+["Quá trình giáo dục có đặc điểm:",["Diễn ra tức thời","Không cần mục tiêu","Lâu dài và liên tục","Không phụ thuộc cá nhân"],2,"Giáo dục là quá trình lâu dài, liên tục và có tính cá biệt."],
+["Giáo dục cần thông qua:",["Hoạt động, giao tiếp, tự giáo dục","Chỉ nghe giảng","Chỉ đọc sách","Chỉ kiểm tra"],0,"Ba con đường quan trọng: hoạt động, giao tiếp, tự giáo dục."],
+["Phương pháp giáo dục là:",["Mục tiêu giáo dục","Cách thức phối hợp hoạt động để thực hiện mục tiêu","Nội dung chương trình","Kết quả kiểm tra"],1,"Phương pháp trả lời câu hỏi giáo dục bằng cách nào."],
+["Ba nhóm phương pháp giáo dục gồm:",["Dạy, học, thi","Ý thức, hoạt động, kích thích/điều chỉnh","Gia đình, trường học, xã hội","Quan sát, ghi chép, chấm điểm"],1,"Ba nhóm: hình thành ý thức; tổ chức hoạt động; kích thích và điều chỉnh hành vi."],
+["Kể chuyện về tấm gương trung thực thuộc nhóm:",["Hình thành ý thức","Tổ chức hoạt động","Kích thích hành vi","Đánh giá kết quả"],0,"Kể chuyện/nêu gương giúp hình thành nhận thức và thái độ."],
+["Giao nhiệm vụ để học sinh rèn trách nhiệm thuộc nhóm:",["Hình thành ý thức","Tổ chức hoạt động","Kích thích hành vi","Trách phạt"],1,"Giao việc tạo cơ hội thực hành và hình thành kinh nghiệm hành vi."],
+["Khen thưởng hành vi tích cực thuộc nhóm:",["Hình thành ý thức","Tổ chức hoạt động","Kích thích, điều chỉnh hành vi","Tự giáo dục"],2,"Khen thưởng là biện pháp kích thích, củng cố hành vi tích cực."],
+["Yếu tố nào cần cân nhắc khi chọn phương pháp?",["Lứa tuổi và đặc điểm cá nhân","Chỉ sở thích giáo viên","Chỉ thời lượng tiết học","Không cần mục tiêu"],0,"Phương pháp phải phù hợp mục tiêu, nội dung, lứa tuổi, cá nhân và hoàn cảnh."],
+["Lý do cần phối hợp phương pháp:",["Một phương pháp luôn đủ","Mỗi phương pháp có ưu điểm và giới hạn","Để tiết học dài hơn","Để giảm vai trò học sinh"],1,"Phối hợp tạo tác động toàn diện và phù hợp tình huống."],
+["HĐTN-HN chủ yếu nhằm:",["Chỉ giải trí","Phát triển phẩm chất, năng lực qua trải nghiệm và vận dụng","Chỉ hướng dẫn chọn nghề","Thay thế mọi môn học"],1,"Trọng tâm là phát triển phẩm chất, năng lực qua trải nghiệm thực tiễn."],
+["Bốn mạch nội dung gồm:",["Bản thân, xã hội, tự nhiên, hướng nghiệp","Toán, Văn, Anh, Tin","Gia đình, trường, lớp, bạn bè","Thể chất, trí tuệ, thi cử, nghề"],0,"Bốn mạch: bản thân – xã hội – tự nhiên – hướng nghiệp."],
+["Nội dung nào là loại hình tổ chức HĐTN-HN?",["Thi cuối kỳ","Sinh hoạt dưới cờ","Kiểm tra 15 phút","Bài tập về nhà"],1,"Sinh hoạt dưới cờ là một trong bốn loại hình tổ chức cơ bản."],
+["Đâu không phải loại hình tổ chức được nêu trong đề cương?",["Sinh hoạt lớp","Hoạt động theo chủ đề","Câu lạc bộ","Thi học kỳ"],3,"Bốn loại hình: dưới cờ, sinh hoạt lớp, theo chủ đề, câu lạc bộ."],
+["Hướng nghiệp bắt đầu bằng việc:",["Chọn nghề theo bạn bè","Hiểu bản thân","Đăng ký đại học ngay","Chọn nghề có thu nhập cao nhất"],1,"Cần hiểu sở thích, năng lực, giá trị và điều kiện của bản thân."],
+["Tìm hiểu thị trường lao động giúp học sinh:",["Biết yêu cầu và cơ hội nghề nghiệp","Không cần hiểu bản thân","Chọn nghề theo trào lưu","Bỏ qua đào tạo"],0,"Thông tin thị trường giúp lựa chọn có căn cứ và thực tế."],
+["Trong HĐTN-HN, giáo viên chủ yếu:",["Làm thay học sinh","Định hướng, thiết kế, tổ chức, hỗ trợ và đánh giá","Chỉ đọc lý thuyết","Chỉ quan sát không hỗ trợ"],1,"Giáo viên tổ chức và hỗ trợ, không làm thay người học."],
+["Học sinh trong HĐTN-HN là:",["Người nghe thụ động","Chủ thể tích cực tham gia trải nghiệm","Người chỉ ghi chép","Người chỉ nhận điểm"],1,"Học sinh cần chủ động trải nghiệm, hợp tác và tự đánh giá."],
+["Bước đầu của quy trình tổ chức hoạt động là:",["Đánh giá","Chuẩn bị và xác định mục tiêu","Tổng kết","Chia sẻ kết quả"],1,"Cần xác định mục tiêu và chuẩn bị trước khi thiết kế, thực hiện."],
+["Sau khi thực hiện hoạt động, học sinh nên:",["Kết thúc ngay","Chia sẻ, phản hồi và đánh giá","Không cần rút kinh nghiệm","Chỉ chờ điểm"],1,"Chia sẻ và đánh giá giúp rút ra điều học được và hướng vận dụng."],
+["Ví dụ bảo vệ môi trường thuộc mạch:",["Hướng vào bản thân","Hướng đến xã hội","Hướng đến tự nhiên","Hướng nghiệp"],2,"Bảo vệ môi trường thuộc mạch hướng đến tự nhiên."],
+["Hoạt động phỏng vấn người làm nghề thuộc nội dung:",["Hướng nghiệp","Hướng vào tự nhiên","Chỉ sinh hoạt lớp","Kỷ luật học đường"],0,"Phỏng vấn người làm nghề giúp tìm hiểu nghề nghiệp thực tế."],
+["Một hoạt động trải nghiệm tốt cần:",["Có mục tiêu và nhiệm vụ rõ","Chỉ cần vui","Không cần phản hồi","Không cần liên hệ thực tiễn"],0,"Hoạt động cần mục tiêu, tổ chức, nhiệm vụ và đánh giá."],
+["Khi học sinh hiểu trung thực nhưng vẫn gian lận, giáo viên nên:",["Chỉ giảng lại nhiều lần","Kết hợp trao đổi, tạo cơ hội thực hành và phản hồi hành vi","Bỏ qua","Chỉ phạt thật nặng"],1,"Cần phối hợp hình thành ý thức, tổ chức hành vi và điều chỉnh."],
+["Cụm từ phù hợp nhất để nhớ ba nhóm phương pháp là:",["Biết – hiểu – thi","Hiểu – làm – điều chỉnh","Đọc – chép – thuộc","Nhìn – nghe – viết"],1,"Ý thức giúp hiểu; hoạt động giúp làm; kích thích giúp điều chỉnh."],
+["Vai trò gia đình nổi bật ở:",["Tạo ảnh hưởng ban đầu, nề nếp và tình cảm","Thay thế toàn bộ chương trình","Chỉ kiểm tra bài","Chỉ cấp kinh phí"],0,"Gia đình có ảnh hưởng từ sớm và bền lâu đến thói quen, tình cảm."],
+["Nếu các lực lượng giáo dục tác động mâu thuẫn, có thể:",["Tạo định hướng thống nhất hơn","Làm người học lúng túng, khó hình thành chuẩn mực ổn định","Không ảnh hưởng","Tự động nâng cao kết quả"],1,"Thông điệp thiếu nhất quán có thể gây mâu thuẫn trong nhận thức và hành vi."],
+["Tự giáo dục thể hiện rõ nhất khi người học:",["Chờ người khác nhắc","Tự đặt mục tiêu và điều chỉnh hành vi","Chỉ làm khi bị phạt","Không tự đánh giá"],1,"Tự giáo dục đòi hỏi chủ động nhận thức, rèn luyện và điều chỉnh."],
+["Khen thưởng có ý nghĩa chủ yếu là:",["Củng cố hành vi tích cực","Thay thế mọi hoạt động","Làm người học không cần tự giác","Chỉ tạo cạnh tranh"],0,"Khen thưởng có thể khuyến khích và củng cố hành vi tốt nếu dùng phù hợp."],
+["Sinh hoạt câu lạc bộ là:",["Một loại hình tổ chức HĐTN-HN","Một phương pháp trách phạt","Một hình thức kiểm tra","Một mạch nội dung riêng"],0,"Câu lạc bộ là một trong các loại hình tổ chức."],
+["Mạch hướng đến xã hội nhấn mạnh:",["Quan hệ, giao tiếp, hợp tác và trách nhiệm","Chăm sóc cây","Chọn trường đại học","Quản lý thời gian cá nhân"],0,"Mạch này hướng tới quan hệ và trách nhiệm với cộng đồng."],
+["Khi đánh giá trải nghiệm, cần quan tâm:",["Chỉ sản phẩm cuối cùng","Quá trình tham gia, kết quả, điều học được và khả năng vận dụng","Chỉ điểm số","Chỉ mức độ vui"],1,"Đánh giá nên nhìn cả quá trình, kết quả và sự tiến bộ."],
+["Cách nhớ bốn mạch nội dung hiệu quả là:",["Mình – Người – Tự nhiên – Nghề","Cờ – Lớp – Chủ đề – CLB","Hiểu – Làm – Điều chỉnh","Trường – Nhà – Xã hội"],0,"Đây là cụm gợi nhớ theo thứ tự bốn mạch."],
+["Cách nhớ bốn loại hình tổ chức là:",["Mình – Người – Tự nhiên – Nghề","Cờ – Lớp – Chủ đề – CLB","Hiểu – Làm – Điều chỉnh","Đầu tiên – lâu dài – chủ đạo"],1,"Bốn loại hình: dưới cờ, sinh hoạt lớp, theo chủ đề, câu lạc bộ."]
+];
+const tf=[
+["Gia đình là môi trường giáo dục đầu tiên của mỗi cá nhân.",true,"Gia đình có ảnh hưởng sớm và lâu dài."],
+["Nhà trường không cần phối hợp với gia đình nếu đã có giáo viên chủ nhiệm.",false,"Ba lực lượng cần phối hợp thường xuyên."],
+["Xã hội có thể tạo cơ hội trải nghiệm thực tiễn cho người học.",true,"Đây là một vai trò quan trọng của xã hội."],
+["Quá trình giáo dục chỉ diễn ra trong một thời gian ngắn.",false,"Giáo dục là quá trình lâu dài và liên tục."],
+["Giáo dục cần thông qua hoạt động, giao tiếp và tự giáo dục.",true,"Đây là ba con đường quan trọng."],
+["Phương pháp giáo dục chỉ là cách giáo viên truyền đạt nội dung.",false,"Đó là cách phối hợp hoạt động giữa nhà giáo dục và người được giáo dục."],
+["Kể chuyện và nêu gương thường thuộc nhóm hình thành ý thức.",true,"Các cách này giúp người học nhận thức, hình thành thái độ."],
+["Giao việc và luyện tập thuộc nhóm tổ chức hoạt động.",true,"Người học thực hành để hình thành kinh nghiệm hành vi."],
+["Khen thưởng thuộc nhóm kích thích, điều chỉnh hành vi.",true,"Khen thưởng củng cố hành vi tích cực."],
+["Một phương pháp duy nhất phù hợp với mọi học sinh.",false,"Cần lựa chọn linh hoạt theo mục tiêu và đặc điểm cá nhân."],
+["HĐTN-HN chỉ nhằm tạo không khí vui vẻ.",false,"Hoạt động hướng tới phát triển phẩm chất, năng lực qua trải nghiệm."],
+["Bốn mạch nội dung có mạch hướng đến tự nhiên và hướng nghiệp.",true,"Đó là hai trong bốn mạch."],
+["Sinh hoạt dưới cờ và sinh hoạt lớp là hai loại hình tổ chức.",true,"Cùng với hoạt động theo chủ đề và câu lạc bộ."],
+["Hướng nghiệp không cần tìm hiểu bản thân.",false,"Hiểu bản thân là bước nền tảng."],
+["Giáo viên nên làm thay học sinh trong mọi hoạt động trải nghiệm.",false,"Giáo viên định hướng và hỗ trợ; học sinh là chủ thể tích cực."]
+];
+const blanks=[
+["Ba lực lượng giáo dục cơ bản là nhà trường, gia đình và ___.","xã hội","Ba lực lượng: nhà trường – gia đình – xã hội."],
+["Gia đình là môi trường giáo dục ___.","đầu tiên","Gia đình có ảnh hưởng sớm và lâu dài."],
+["Nhà trường giữ vai trò __ trong giáo dục có tổ chức, kế hoạch.","chủ đạo","Từ khóa vai trò nhà trường: chủ đạo."],
+["Quá trình giáo dục nhằm hình thành và phát triển __ người học.","nhân cách","Đích đến là phẩm chất và nhân cách."],
+["Giáo dục diễn ra thông qua hoạt động, giao tiếp và sự ___ của cá nhân.","tự giáo dục","Người học phải tự nhận thức và điều chỉnh."],
+["Phương pháp giáo dục là cách thức ___ hoạt động giữa nhà giáo dục và người học.","phối hợp","Định nghĩa nhấn mạnh sự phối hợp hoạt động."],
+["Ba nhóm phương pháp: hình thành ý thức, tổ chức hoạt động, kích thích và ___ hành vi.","điều chỉnh","Nhóm thứ ba kích thích, điều chỉnh hành vi."],
+["Kể chuyện, đàm thoại và nêu gương thuộc nhóm hình thành ___.","ý thức","Nhóm này giúp hình thành nhận thức, thái độ."],
+["Luyện tập, rèn luyện và giao việc thuộc nhóm tổ chức ___.","hoạt động","Nhóm này tạo kinh nghiệm hành vi."],
+["Khen thưởng, trách phạt và thi đua thuộc nhóm kích thích, ___ hành vi.","điều chỉnh","Đây là nhóm thứ ba."],
+["Bốn mạch HĐTN-HN: bản thân, xã hội, tự nhiên và ___.","hướng nghiệp","Mẹo nhớ: Mình – Người – Tự nhiên – Nghề."],
+["Bốn loại hình: sinh hoạt dưới cờ, sinh hoạt lớp, theo chủ đề và ___.","câu lạc bộ","Mẹo nhớ: Cờ – Lớp – Chủ đề – CLB."],
+["Hướng nghiệp cần hiểu bản thân, hiểu nghề, tìm hiểu thị trường lao động và lập ___.","kế hoạch","Lựa chọn cần có kế hoạch thực hiện."],
+["Giáo viên trong HĐTN-HN có vai trò định hướng, thiết kế, tổ chức, hướng dẫn, hỗ trợ và ___.","đánh giá","Đánh giá giúp phản hồi và cải thiện hoạt động."],
+["Quy trình tổ chức: chuẩn bị, thiết kế, thực hiện, chia sẻ/phản hồi và ___.","đánh giá","Bước cuối là đánh giá và vận dụng."]
+];
+const essays=[
+["Phân tích vai trò của nhà trường, gia đình và xã hội trong giáo dục nhân cách. Vì sao cần phối hợp ba lực lượng?","Mở ý: Nhân cách chịu tác động của nhiều lực lượng. Nhà trường giữ vai trò chủ đạo, tổ chức giáo dục có mục đích và kế hoạch. Gia đình là môi trường đầu tiên, gần gũi, ảnh hưởng lâu dài đến nề nếp và tình cảm. Xã hội tạo môi trường, điều kiện và cơ hội thực tiễn. Ba lực lượng bổ sung cho nhau; cần thống nhất mục tiêu, nội dung, trao đổi thường xuyên, phối hợp chặt chẽ và đúng chức năng. Có thể nêu ví dụ rèn tính trung thực hoặc trách nhiệm."],
+["Trình bày bản chất và những đặc điểm cơ bản của quá trình giáo dục.","Nêu khái niệm: quá trình tổ chức tác động có mục đích, có kế hoạch nhằm hình thành và phát triển phẩm chất, nhân cách. Phân tích: có mục đích; có tương tác; gắn hoạt động và giao tiếp; lâu dài, liên tục; mang tính cá biệt; đòi hỏi tự giác và tự giáo dục. Kết luận: giáo dục không chỉ truyền đạt điều đúng mà cần tạo cơ hội để người học hiểu, thực hành và hình thành thói quen."],
+["Trình bày khái niệm và phân tích ba nhóm phương pháp giáo dục, kèm ví dụ.","Định nghĩa phương pháp giáo dục là cách thức phối hợp hoạt động giữa nhà giáo dục và người được giáo dục. Nhóm 1 hình thành ý thức: giảng giải, đàm thoại, kể chuyện, nêu gương. Nhóm 2 tổ chức hoạt động: luyện tập, rèn luyện, giao việc. Nhóm 3 kích thích/điều chỉnh: khen thưởng, trách phạt, thi đua. Dùng một chủ đề như trung thực để minh họa lần lượt cả ba nhóm."],
+["Vì sao cần phối hợp nhiều phương pháp giáo dục? Nêu nguyên tắc lựa chọn.","Mỗi phương pháp có ưu điểm và giới hạn, tác động vào những mặt khác nhau. Cần kết hợp để người học vừa hiểu, vừa thực hành, vừa được phản hồi và điều chỉnh. Lựa chọn theo mục tiêu, nội dung, lứa tuổi, đặc điểm cá nhân, hoàn cảnh; phát huy tích cực, tự giác; linh hoạt, tôn trọng nhân cách và gắn thực tiễn."],
+["Trình bày mục tiêu, bốn mạch nội dung và bốn loại hình tổ chức HĐTN-HN.","Mục tiêu là phát triển phẩm chất, năng lực qua trải nghiệm và vận dụng thực tiễn. Bốn mạch: bản thân, xã hội, tự nhiên, hướng nghiệp. Bốn loại hình: sinh hoạt dưới cờ, sinh hoạt lớp, hoạt động giáo dục theo chủ đề, câu lạc bộ. Nêu ví dụ ngắn cho từng mạch hoặc loại hình."],
+["Phân tích nội dung cốt lõi của giáo dục hướng nghiệp.","Học sinh cần nhận thức bản thân (sở thích, năng lực, giá trị, điều kiện); tìm hiểu nghề và yêu cầu nghề; tìm hiểu thị trường lao động, xu hướng và cơ sở đào tạo; cân nhắc, lựa chọn hướng đi và lập kế hoạch học tập/rèn luyện. Nhấn mạnh lựa chọn có căn cứ, linh hoạt, phù hợp."],
+["Phân tích vai trò của giáo viên và học sinh trong HĐTN-HN.","Giáo viên định hướng mục tiêu, thiết kế nhiệm vụ, tổ chức môi trường, hướng dẫn, hỗ trợ và đánh giá. Học sinh là chủ thể: chủ động tham gia, hợp tác, giải quyết vấn đề, chia sẻ, phản hồi, tự đánh giá và vận dụng. Giáo viên không làm thay, học sinh không thụ động."],
+["Trình bày quy trình tổ chức một hoạt động trải nghiệm và minh họa.","Các bước: chuẩn bị/xác định mục tiêu; thiết kế nội dung, nhiệm vụ, phương tiện; tổ chức thực hiện; chia sẻ và phản hồi; đánh giá, rút kinh nghiệm và vận dụng. Ví dụ: khảo sát rác thải nhựa, đề xuất giải pháp, thử nghiệm, báo cáo và đánh giá."],
+["Phân biệt ba nhóm phương pháp giáo dục bằng một tình huống sư phạm.","Chọn tình huống rèn tinh thần trách nhiệm. Hình thành ý thức: thảo luận ý nghĩa trách nhiệm, nêu gương. Tổ chức hoạt động: giao nhiệm vụ trực nhật/dự án và cho học sinh thực hiện. Kích thích, điều chỉnh: ghi nhận tiến bộ, phản hồi khi chưa hoàn thành, tổ chức thi đua lành mạnh. Chỉ rõ mục đích của từng nhóm."],
+["Thiết kế một hoạt động HĐTN-HN theo chủ đề bảo vệ môi trường.","Mục tiêu: nâng nhận thức và hành vi bảo vệ môi trường. Chuẩn bị: chia nhóm, phiếu khảo sát, dụng cụ. Thực hiện: khảo sát rác, phân loại, đề xuất giải pháp, truyền thông hoặc thử nghiệm giảm nhựa. Chia sẻ: trình bày kết quả. Đánh giá: mức tham gia, giải pháp, thay đổi hành vi và kế hoạch duy trì."],
+["Phân tích mối quan hệ giữa nhận thức, hành vi và thói quen trong quá trình giáo dục.","Nhận thức giúp người học hiểu điều đúng và lý do cần thực hiện; hoạt động tạo cơ hội chuyển hiểu biết thành hành vi; lặp lại và phản hồi phù hợp giúp hành vi ổn định thành thói quen. Cần kết hợp giải thích, thực hành, nêu gương và củng cố."],
+["Một học sinh biết nội quy nhưng thường xuyên vi phạm. Hãy đề xuất cách giáo dục phù hợp.","Tìm hiểu nguyên nhân và hoàn cảnh; trao đổi tôn trọng; giúp học sinh hiểu ý nghĩa quy định; thống nhất mục tiêu nhỏ; giao nhiệm vụ/rèn luyện cụ thể; ghi nhận tiến bộ và phản hồi hành vi chưa phù hợp; phối hợp gia đình khi cần; khuyến khích tự đánh giá. Tránh chỉ trách phạt."],
+["Giải thích vì sao hoạt động trải nghiệm không đồng nghĩa với hoạt động vui chơi tùy ý.","Trải nghiệm giáo dục phải có mục tiêu phát triển phẩm chất/năng lực, nội dung và nhiệm vụ phù hợp, sự tham gia chủ động, hướng dẫn và hỗ trợ, chia sẻ/phản hồi và đánh giá. Yếu tố vui vẻ có thể có nhưng không thay thế mục tiêu giáo dục."],
+["Phân tích ý nghĩa của việc đánh giá trong HĐTN-HN.","Đánh giá giúp xác định mức đạt mục tiêu, ghi nhận quá trình và sự tiến bộ, nhận diện khó khăn, khuyến khích tự nhận thức, cải thiện hoạt động tiếp theo và định hướng vận dụng. Nên kết hợp tự đánh giá, đánh giá đồng đẳng và phản hồi của giáo viên."],
+["So sánh vai trò của gia đình và nhà trường trong quá trình giáo dục.","Gia đình là môi trường đầu tiên, gần gũi, ảnh hưởng lâu dài đến nề nếp, tình cảm và thói quen. Nhà trường giữ vai trò chủ đạo trong giáo dục có mục đích, tổ chức và kế hoạch. Hai bên khác chức năng nhưng bổ sung cho nhau; cần thống nhất định hướng và trao đổi thường xuyên."]
+];
+
+let state=JSON.parse(localStorage.getItem("gd_hoc_mobile")||'{"learned":[],"best":0,"attempts":0,"missed":[]}');
+let currentTopic=0,cardIndex=0,cardFlipped=false,quizSet=[],quizIndex=0,quizAnswers=[],quizChecked=false,fillIndex=0,tfIndex=0,essayIndex=0;
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem("gd_hoc_mobile",JSON.stringify(state));stats()}
+function stats(){$("sLearned").textContent=state.learned.length;$("sBest").textContent=state.best+"%";$("sDone").textContent=state.attempts;$("progressBar").style.width=(state.learned.length/cards.length*100)+"%";$("progressText").textContent=state.learned.length+" / "+cards.length+" thẻ đã tự nhớ"}
+function go(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));$(id==="cards"?"cardsScreen":id).classList.add("active");document.querySelectorAll(".bottomnav button").forEach(b=>b.classList.toggle("active",b.dataset.go===id||(id==="cards"&&b.dataset.go==="cardsScreen")));window.scrollTo({top:0,behavior:"smooth"});if(id==="cards")renderCard();if(id==="essayScreen")renderEssay()}
+function openLesson(i){currentTopic=i;go("learn");renderLesson()}
+function renderLesson(){let t=topics[currentTopic];$("lessonArea").innerHTML=`<div class="box"><span class="tag">CHUYÊN ĐỀ ${currentTopic+1}/3</span><h2>${t.title}</h2><p>${t.intro}</p><div class="remember"><b>Nhớ nhanh:</b> ${t.tag}</div><p class="sub">Học từng mục. Đọc phần giải thích trước, sau đó thử tự nói lại ý chính.</p></div><div class="lesson-list">${t.sections.map((s,i)=>`<details class="lesson" ${i===0?"open":""}><summary><span class="num">${String(i+1).padStart(2,"0")}</span>${s[0]}</summary><div class="lesson-content"><p>${s[1]}</p><div class="remember"><b>Ghi nhớ:</b><br>${s[2]}</div><button class="light" onclick="this.textContent=this.textContent.includes('Đã tự')?'Tôi chưa thuộc':'✓ Đã tự nhắc lại';this.classList.toggle('outline')">✓ Đã tự nhắc lại</button></div></details>`).join("")}</div><div class="navrow"><button class="outline" onclick="${currentTopic===0?"go('home')":`openLesson(${currentTopic-1})`}">← Trước</button><button onclick="${currentTopic===2?"go('cards')":`openLesson(${currentTopic+1})`}">${currentTopic===2?"Ôn thẻ ghi nhớ":"Chuyên đề tiếp →"}</button></div>`}
+function renderCard(){let c=cards[cardIndex];$("cardCount").textContent=`Thẻ ${cardIndex+1}/${cards.length}`;$("cardProgress").style.width=((cardIndex+1)/cards.length*100)+"%";$("cardFront").textContent=c[0];$("cardBack").textContent=c[1];$("cardBack").classList.toggle("show",cardFlipped);$("cardStatus").textContent=cardFlipped?"Đã xem đáp án":"Hãy tự trả lời trước";$("cardBack").classList.toggle("answer",!cardFlipped)}
+function flip(){cardFlipped=!cardFlipped;renderCard()}
+function cardMove(d){cardIndex=(cardIndex+d+cards.length)%cards.length;cardFlipped=false;renderCard()}
+function remember(ok){if(ok&&!state.learned.includes(cardIndex))state.learned.push(cardIndex);if(!ok)state.missed.push("card:"+cardIndex);save();cardMove(1)}
+function startQuiz(){quizSet=[...mcqs].sort(()=>Math.random()-.5).slice(0,10);quizIndex=0;quizAnswers=Array(10).fill(null);quizChecked=false;go("quizScreen");renderQuiz()}
+function renderQuiz(){let q=quizSet[quizIndex];$("quizArea").innerHTML=`<div class="progress"><i style="width:${(quizIndex+1)/10*100}%"></i></div><div class="qtop"><span>Câu ${quizIndex+1}/10</span><span>${quizChecked?"Đã kiểm tra":"Chưa trả lời"}</span></div><div class="qtext">${q[0]}</div>${q[1].map((v,j)=>`<label class="choice"><input type="radio" name="choice" value="${j}" ${quizAnswers[quizIndex]===j?"checked":""} ${quizChecked?"disabled":""}><span><b>${"ABCD"[j]}.</b> ${v}</span></label>`).join("")}${quizChecked?`<div class="feedback ${quizAnswers[quizIndex]===q[2]?"good":"bad"}"><b>${quizAnswers[quizIndex]===q[2]?"Chính xác!":"Chưa đúng."}</b><br>Đáp án đúng: ${"ABCD"[q[2]]}. ${q[1][q[2]]}<br>${q[3]}</div>`:""}<div class="navrow">${quizChecked?`<button onclick="nextQuiz()">${quizIndex===9?"Xem kết quả":"Câu tiếp theo →"}</button>`:`<button onclick="checkQuiz()">Kiểm tra đáp án</button>`}</div>`}
+function checkQuiz(){let v=document.querySelector('input[name="choice"]:checked');if(!v){alert("Bạn hãy chọn một đáp án trước nhé.");return}quizAnswers[quizIndex]=Number(v.value);quizChecked=true;renderQuiz()}
+function nextQuiz(){if(quizIndex<9){quizIndex++;quizChecked=false;renderQuiz();return}let score=quizSet.filter((q,i)=>quizAnswers[i]===q[2]).length;state.attempts++;state.best=Math.max(state.best,score*10);quizSet.forEach((q,i)=>{if(quizAnswers[i]!==q[2])state.missed.push(q[0])});save();$("quizArea").innerHTML=`<div class="question"><h2>Kết quả: ${score}/10</h2><p>${score>=8?"Rất tốt! Bạn đã nắm khá chắc phần này.":score>=6?"Khá rồi. Xem lại các câu sai và thử lượt khác nhé.":"Đừng lo. Quay lại học lý thuyết theo từng mục nhỏ rồi làm lại."}</p><div class="navrow"><button onclick="startQuiz()">Làm lượt mới</button><button class="light" onclick="go('learn')">Ôn lại lý thuyết</button></div></div>`}
+function startFill(){go("practice");fillIndex=0;renderFill()}
+function renderFill(){let q=blanks[fillIndex];$("practiceArea").innerHTML=`<div class="question"><div class="qtop"><span>ĐIỀN KHUYẾT · ${fillIndex+1}/${blanks.length}</span><span>Tự nhớ từ khóa</span></div><div class="qtext">${q[0]}</div><input class="field" id="fillInput" placeholder="Nhập từ còn thiếu"><div class="navrow"><button onclick="checkFill()">Kiểm tra</button><button class="outline" onclick="fillIndex=(fillIndex+1)%blanks.length;renderFill()">Bỏ qua</button></div><div id="fillFeedback"></div></div>`}
+function checkFill(){let a=$("fillInput").value.trim().toLocaleLowerCase("vi"),q=blanks[fillIndex],ok=a===q[1].toLocaleLowerCase("vi")||(a.length>3&&q[1].toLocaleLowerCase("vi").includes(a));$("fillFeedback").innerHTML=`<div class="feedback ${ok?"good":"bad"}">${ok?"Chính xác!":"Đáp án tham khảo: "+q[1]}<br>${q[2]}</div><button style="margin-top:12px;width:100%" onclick="fillIndex=(fillIndex+1)%blanks.length;renderFill()">Câu tiếp theo →</button>`;state.attempts++;save()}
+function startTF(){go("practice");tfIndex=0;renderTF()}
+function renderTF(){let q=tf[tfIndex];$("practiceArea").innerHTML=`<div class="question"><div class="qtop"><span>ĐÚNG / SAI · ${tfIndex+1}/${tf.length}</span></div><div class="qtext">${q[0]}</div><div class="navrow"><button onclick="checkTF(true)">Đúng</button><button class="light" onclick="checkTF(false)">Sai</button></div><div id="tfFeedback"></div></div>`}
+function checkTF(v){let q=tf[tfIndex],ok=v===q[1];$("tfFeedback").innerHTML=`<div class="feedback ${ok?"good":"bad"}">${ok?"Chính xác!":"Chưa đúng."}<br>${q[2]}</div><button style="margin-top:12px;width:100%" onclick="tfIndex=(tfIndex+1)%tf.length;renderTF()">Câu tiếp theo →</button>`;state.attempts++;save()}
+function renderEssay(){let q=essays[essayIndex];$("essayArea").innerHTML=`<div class="qtop"><span>ĐỀ ${essayIndex+1}/${essays.length}</span><span>Tự trình bày</span></div><div class="qtext">${q[0]}</div><textarea class="field" placeholder="Viết dàn ý hoặc câu trả lời của bạn ở đây..."></textarea><button class="light" style="width:100%;margin-top:12px" onclick="document.getElementById('essayAnswer').classList.toggle('show')">Mở dàn ý tham khảo</button><div class="answer explain" id="essayAnswer">${q[1]}</div><div class="navrow"><button class="outline" onclick="essayIndex=(essayIndex-1+essays.length)%essays.length;renderEssay()">← Đề trước</button><button onclick="essayIndex=(essayIndex+1)%essays.length;renderEssay()">Đề tiếp →</button></div>`}
+stats();
+</script>
+</body></html>
